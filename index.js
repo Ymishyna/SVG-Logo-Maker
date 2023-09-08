@@ -9,44 +9,54 @@ class LogoShape {
             .prompt([
                 {
                     type: 'input',
-                    name: 'name',
-                    message: 'What is your name?',
+                    name: 'text',
+                    message: 'Pick a text for your logo',
+                    validate: (text) => text.length <= 3 || "Please pick only 3 letters",
                 },
                 {
                     type: 'input',
-                    name: 'location',
-                    message: 'Where are you from?',
+                    name: 'textColor',
+                    message: 'Pick a color for your text',
+                },
+                {
+                    type: 'list',
+                    name: 'shapeType',
+                    message: 'Pick a shape for your logo',
+                    choices: ['circle', 'triangle', 'square']
                 },
                 {
                     type: 'input',
-                    name: 'hobby',
-                    message: 'What is your favorite hobby?',
-                },
-                {
-                    type: 'input',
-                    name: 'food',
-                    message: 'What is your favorite food?',
-                },
-                {
-                    type: 'input',
-                    name: 'github',
-                    message: 'Enter your GitHub Username',
-                },
-                {
-                    type: 'input',
-                    name: 'linkedin',
-                    message: 'Enter your LinkedIn URL.',
-                },
+                    name: 'shapeColor',
+                    message: 'Pick a color of the shape for your logo',
+                }
             ])
-            .then((answers) => {
-                const htmlPageContent = generateHTML(answers);
-
-                fs.writeFile('index.html', htmlPageContent, (err) =>
-                    err ? console.log(err) : console.log('Successfully created index.html!')
-                );
+            .then(({ text, textColor, shapeType, shapeColor }) => {
+                let shape;
+                switch (shapeType) {
+                    case "circle":
+                        shape = new Circle();
+                        break;
+                    case "triangle":
+                        shape = new Triangle();
+                        break;
+                    case "square":
+                        shape = new Square();
+                        break;
+                }
+                shape.setColor(shapeColor);
+                const svg = new SVG();
+                svg.addText(text, textColor);
+                svg.addShape(shape)
+                return writeFile('logo.svg', svg.render())
             })
+            .then(() => console.log('Generated logo.svg'))
+            .catch((err) => {
+                console.log(err);
+                console.log('Oops.. Something went wrong!');
+            });
     }
 }
+
 
 new LogoShape().run();
 
