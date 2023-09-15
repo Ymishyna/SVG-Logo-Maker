@@ -1,15 +1,20 @@
-# Object-oriented Programming: SVG Logo Maker
+# SVG Logo Maker
 
+## Description
 
-## Your Task
+Building a Node.js command-line application that takes in user input to generate a logo and save it as an [SVG file](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics). The application prompts the user to select a color and shape, provide text for the logo, and save the generated SVG to a `.svg` file.
 
-Your task is to build a Node.js command-line application that takes in user input to generate a logo and save it as an [SVG file](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics). The application prompts the user to select a color and shape, provide text for the logo, and save the generated SVG to a `.svg` file.
+## Table of Contents 
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Mock-Up](#mock-up)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Walkthrough Video](#walkthrough-video)
+- [Helpful SVG Resources](#helpful-svg-resources)
+- [Questions](#questions)
 
-Because this application won’t be deployed, you’ll need to provide a link to a walkthrough video that demonstrates its functionality and passes all of the tests. You’ll need to submit a link to the video **and** add it to the README of your project.
-
-Refer to the [Video Submission Guide](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) on the Full-Stack Blog for additional guidance on creating a video.
-
-> **Note**: There is no starter code for this assignment.
 ### User Story
 
 ```md
@@ -42,6 +47,61 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
 The following image shows a mock-up of the generated SVG given the following input entered by the user: `SVG` for the text, `white` for the text color, `circle` from the list of shapes, and `green` for the shape color. Note that this is just an image of the output SVG and not the SVG file itself:
 
 ![Image showing a green circle with white text that reads "SVG.".](./Images/10-oop-homework-demo.png)
+
+## Installation
+
+1. Download the zip file and copy it to a directory of your choice or clone to a directory of your choice using your terminal. 
+2. Open the file in VS Code or any editor you prefer.
+3. Open the terminal in VS Code and make sure you’re in the correct directory.
+4. Create a `.gitignore` file and include `node_modules/` and `.DS_Store/` so that your `node_modules` directory isn't tracked or uploaded to GitHub. Be sure to create your `.gitignore` file before installing any npm dependencies.
+5. Make sure that your repo includes a `package.json` with the required dependencies. You can create one by running `npm init` when you first set up the project, before installing any dependencies.
+6. Ensure inquirer is installed [Inquirer package](https://www.npmjs.com/package/inquirer/v/8.2.4). Run `npm i` to install dependencies in local project directory.
+
+## Usage
+
+1. Open your terminal.
+2. The application will be invoked by using the following command:
+
+```bash
+node index.js
+```
+
+3. Answer questions that follow.
+4. A logo.svg file will be generated.
+5. To perform Unit Testing by using Jest invoke the following command - `npm test`
+
+## Contributing
+
+Any Contribution is more than welcome!
+
+## Walkthrough Video
+
+```
+Disclaimer: The following video provides an illustrative example of how to respond to prompts using the given content. It is intended solely for instructional purposes and to showcase the concept. Users are encouraged to utilize their own responses, thoughts, and ideas when interacting with prompts to achieve personalized and authentic outcomes. The video's content should not be considered prescriptive or definitive, as individual preferences, opinions, and circumstances vary. Viewer discretion is advised, and any actions taken based on the video's content are the responsibility of the user.
+
+````
+[Walkthrough Video Link]()
+
+## Helpful SVG Resources
+
+* [Example SVG](https://static.fullstack-bootcamp.com/fullstack-ground/module-10/circle.svg)
+
+* [Scalable Vector Graphics (SVG)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
+
+* [SVG tutorial](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial)
+
+* [Basic SVG shapes](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes)
+
+* [Text in SVG](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Texts)
+
+* [SVG VS Code extension](https://marketplace.visualstudio.com/items?itemName=jock.svg)
+
+
+## Questions
+
+If you have any question, Email me at: yana.mishina.92@gmail.com
+
+Find me on GitHub: [Ymishyna](https://github.com/Ymishyna)
 
 ## Additional Requirements
 
