@@ -11,7 +11,7 @@ class LogoShape {
                     type: 'input',
                     name: 'text',
                     message: 'Pick a text for your logo',
-                    validate: (text) => text.length <= 3 || "Please pick only 3 letters",
+                    validate: (text) => text.length <= 3 || 'Text must not exceed 3 characters.',
                 },
                 {
                     type: 'input',
@@ -45,8 +45,8 @@ class LogoShape {
                 }
                 shape.setColor(shapeColor);
                 const svg = new SVG();
-                svg.addText(text, textColor);
-                svg.addShape(shape)
+                svg.setText(text, textColor);
+                svg.setShape(shape)
                 return writeFile('logo.svg', svg.render())
             })
             .then(() => console.log('Generated logo.svg'))
